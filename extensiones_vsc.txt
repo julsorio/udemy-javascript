@@ -1,0 +1,9 @@
+node js
+quokka js
+bracket pair colorizer (ya no es requerida)
+es lint
+prettier code
+debugger for chrome (ya no es requerida)
+better comments
+intellicode
+liveserver
