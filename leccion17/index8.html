@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="entrar()">
+
+    <h1>DOM en javascript</h1>
+
+    <div id="mostrar"></div>
+
+    <script>
+        function entrar() {
+            alert('entrando a la pagina web');
+            let texto = '';
+            if(navigator.cookieEnabled) {
+                texto = 'cookies habilitadas';
+            } else {
+                texto = 'cookies deshabilitadas';
+            }
+
+            document.getElementById('mostrar').innerHTML = texto;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario">
+        Nombre : <input id="nombre" type="text"  />
+        <br/>
+        <br/>
+        Apellido : <input id="apellido" type="text"  />
+    </form>
+
+    <script>
+        const formulario = document.getElementById('formulario');
+        formulario.addEventListener('focus', (evento) => {
+            evento.target.style.background = 'pink';
+        }, true);
+        formulario.addEventListener('blur', (evento) => {
+            evento.target.style.background = 'white';
+        }, true);
+    </script>
+</body>
+</html>

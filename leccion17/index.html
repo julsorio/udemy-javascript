@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo DOM javascript</title>
+    <style>
+        .azul {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="cabecera">Ejemplo DOM javascript</h1>
+    <p id="parrafo">Hola mundo!!</p>
+    <p id="parrafo2">Nuevo parrafo</p>
+    <p id="parrafo3" class="azul">Parrafo con estilo</p>
+
+    <script type="text/javascript">
+        let cabecera = document.getElementById('cabecera').innerHTML;
+        console.log(`texto de h1: ${cabecera}`);
+        let parrafo = document.getElementById('parrafo').innerHTML;
+        console.log(`texto de p: ${parrafo}`);
+        console.log('javascript en html');
+
+        //alternativa
+        let h1 = document.getElementById('cabecera');
+        console.log(`acceso a atributos desde el objeto h1: ${h1.innerHTML}`);
+        let p = document.getElementById('parrafo');
+        console.log(`acceso a atributos desde el objeto p: ${p.innerHTML}`);
+
+        //modificacion de texto
+        h1.innerHTML = 'cambio texto de h1 desde javascript';
+        p.innerHTML = 'cambio texto de p desde javascript';
+
+        //obtener todos los elementos de tipo p
+        let parrafos = document.getElementsByTagName('p');
+        console.log(`cantidad etiquetas p: ${parrafos.length}`);
+        for(let cont = 0; cont < parrafos.length; cont ++) {
+            console.log(`posicion ${cont} : - ${parrafos[cont].innerHTML}`);
+        }
+
+        //obtener todos los elementos con una clase
+        let parrafosConEstilos = document.getElementsByClassName('azul');
+        console.log(`cantidad etiquetas con clase: ${parrafosConEstilos.length}`);
+        for(let cont = 0; cont < parrafosConEstilos.length; cont ++) {
+            console.log(`posicion ${cont} : - ${parrafosConEstilos[cont].innerHTML}`);
+        }
+
+        //elementos
+        let elementos = document.querySelectorAll('p.azul');
+        for(let obj of elementos) {
+            console.log(`${obj.innerHTML}`);
+        }
+    </script>
+</body>
+
+
+
+</html>

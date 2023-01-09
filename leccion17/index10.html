@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titulo" onmouseover="rojo(this)" onmouseout="verde(this)" onmousedown="azul(this)" onmouseup="amarillo(this)">DOM con javascript</h1>
+
+    <script>
+        function rojo(titulo) {
+            titulo.style.color = 'red';
+        }
+
+        function verde(titulo) {
+            titulo.style.color = 'green';
+        }
+
+        function azul(titulo) {
+            titulo.style.color = 'blue';
+        }
+
+        function amarillo(titulo) {
+            titulo.style.color = 'yellow';
+        }
+    </script>
+</body>
+</html>
