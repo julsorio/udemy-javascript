@@ -1,0 +1,31 @@
+h1 {
+    color: brown;
+}
+
+p {
+    color: tomato;
+    background-color: blue;
+    padding: 15px;
+    border: 10px solid yellow;
+    margin: 20px;
+}
+
+a:link {
+    color: chartreuse;
+    text-decoration: none;
+}
+
+a:visited {
+    color:steelblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color:cyan;
+    text-decoration: underline;
+}
+
+a:active {
+    color:aliceblue;
+    text-decoration: dotted;
+}

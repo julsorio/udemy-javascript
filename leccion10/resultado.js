@@ -111,3 +111,4 @@ console.log(empleado2.toString());
 //objetos de Cliente
 let cliente = new Cliente('ernesto', 'figueroa', 84);
 console.log(cliente.toString());
+

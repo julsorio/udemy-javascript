@@ -18,7 +18,7 @@
         const formulario = document.getElementById('formulario');
         formulario.addEventListener('focus', (evento) => {
             evento.target.style.background = 'pink';
-        }, true);
+        }, true); //el true es para que el evento se propague en los elementos internos
         formulario.addEventListener('blur', (evento) => {
             evento.target.style.background = 'white';
         }, true);

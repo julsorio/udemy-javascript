@@ -7,3 +7,5 @@ debugger for chrome (ya no es requerida)
 better comments
 intellicode
 liveserver
+path intellisense
+live server preview
