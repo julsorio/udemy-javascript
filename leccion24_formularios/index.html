@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios en HTML</title>
+</head>
+<body>
+    <h1>Formularios en html</h1>
+    <form> <!-- atributo novalidate para evitar las validaciones-->
+
+        <fieldset>
+            <legend>datos</legend>
+
+        <label for="idPersona">Persona:</label>
+        <input type="text" id="idPersona" name="idPersona" readonly="true" disabled="true" value="100" /><br/>
+
+        <input type="hidden" id="sistema" name="sistema" value="sap" />
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="escribe tu nombre" required="true" /><br/>
+        
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" placeholder="escribe tu apellido" required="true" /><br/>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="escribe tu email" required="true" /><br/>
+        
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" placeholder="escribe tu edad" required="true" /> <br/>
+        <!-- step="any" para que se puedan ingresar valores numericos con punto decimal-->
+        
+        <label >Genero:</label><br/>
+        <input type="radio" id="femenino" name="genero" value="femenino" />
+        <label for="femenino" >Femenino</label><br/>
+        <input type="radio" id="masculino" name="genero" value="masculino" />
+        <label for="masculino" >Masculino</label><br/>
+        
+        <label >Musica favorita:</label><br/>
+        <input type="checkbox" id="clasica" name="musica" value="clasica" />
+        <label for="clasica" >Clasica</label><br/>
+        <input type="checkbox" id="jazz" name="musica" value="jazz" />
+        <label for="jazz" >Jazz</label><br/>
+        
+        <label for="autos" >Marca auto favorito</label><br/>
+        <select id="autos" name="autos"> <!-- atributo multiple que permite seleccionar mas de una opcion-->
+            <option value="volvo" >Volvo</option>
+            <option value="ferrari" >Ferrari</option> <!-- atributo selected para que la opcion aparezca seleccionada-->
+            <option value="bmw">BMW</option>
+        </select> <br/>
+        
+        <label for="comentario" >Comentario:</label><br/>
+        <textarea id="comentario" name="comentario" rows="2" cols="30" >Comentario</textarea> <br/>
+        
+        <input type="submit" value="Enviar" />
+        <input type="submit" formnovalidate="formnovalidate" value="Enviar sin validar" />
+        <input type="reset" value="Restablecer" />
+
+    </fieldset>
+
+    </form>
+</body>
+</html>

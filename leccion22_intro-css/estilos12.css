@@ -1,0 +1,153 @@
+/* htmlcolorcodes.com/color-names */
+
+/**{
+    background-color: grey;
+}*/
+
+h1 {
+    text-align: center;
+}
+
+.rojo {
+    /*background-color: firebrick;*/
+    border: 10px solid firebrick;   
+}
+
+.rosa {
+    /*background-color: hotpink;*/
+    border: 10px dashed hotpink;
+    
+}
+
+.amarillo {
+    /*background-color: gold;*/
+    border: 10px double gold;
+}
+
+.violeta {
+    background-color: blueviolet;
+}
+
+.verde {
+    background-color: lime;
+}
+
+.azul {
+    /*background-color: turquoise;*/
+    border: 10px dotted turquoise;
+}
+
+/*.rojo, .rosa, .amarillo, .violeta, verde {
+    color: white;
+}*/
+
+.punteado {
+    border-style: dotted;
+    border-color: crimson hotpink gold lime;
+}
+
+.discontinuo {
+    border-style: dashed;
+}
+
+.solido {
+    border-style: solid;
+}
+
+.doble {
+    border-style: double;
+}
+
+.surco {
+    border-style: groove;
+}
+
+.cresta {
+    border-style: ridge;
+}
+
+.recuadro {
+    border-style: inset;
+}
+
+.outset {
+    border-style: outset;
+}
+
+.sin_borde {
+    border-style: none;
+}
+
+.oculto {
+    border-style: hidden;
+}
+
+.mixto {
+    border-style: dotted solid dashed double;
+}
+
+.multiple {
+    border-style: dotted;
+    border-width: 10px 5px 3px 2px;
+    /* border-width: thin medium thick*/
+    /* border-width con 3 valores -> 10px (superior) 5px (izq der) 2px (inferior) */
+    /* border-width con 2 valores -> 10px (superior, inferior) 5px (izq der) */
+    /* border-color: crimson hotpink gold lime */
+
+}
+
+.redondeado {
+    border: solid red;
+    border-width: 5px;
+    border-radius: 20px;
+    /*border-radius: 20px (sup izq) 0px (sup der) 10px (inf der) 0px (inf izq)*/
+}
+
+.redondeado2 {
+    border: solid red;
+    border-width: 5px;
+    border-radius: 20px 0px 10px 0px;
+}
+
+.punteado, .discontinuo, .solido, .doble, .surco, .cresta, .recuadro, .outset, .mixto {
+    border-width: 10px;
+}
+
+.caja {
+    padding: 10px;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    margin: 5px auto;
+    font-size: 10px;
+    float: left;
+}
+
+.otro_rojo {
+    background-color: crimson;
+}
+
+.otro_rosa {
+    background-color: deeppink;
+}
+
+.rgb {
+    background-color: rgb(131,56,236);
+}
+
+.rgba {
+    background-color: rgba(131, 56, 236, .5);
+}
+
+.hexa {
+    background-color: #0091ad;
+}
+
+.hexa2 {
+    background-color: #0090ad88;
+}
+
+.hsl {
+    background-color: hsla(195, 100%, 50%, .5);
+}

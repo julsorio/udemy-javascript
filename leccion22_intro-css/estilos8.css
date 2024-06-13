@@ -1,0 +1,32 @@
+/* selector universal - se aplica a todo el html*/
+*{
+    background-color: ghostwhite;
+    color: cornflowerblue;
+
+}
+
+/* selector tipo id*/
+#titulo {
+    color: crimson;
+    text-align: center;
+}
+
+/* clases */
+.centrar {
+    text-align: center;
+}
+
+.texto_grande {
+    font-size: 40px;
+}
+
+/* agrupar selectores css*/
+h1, h2, p {
+    color: crimson;
+    text-align: center;
+}
+
+/* subclases  */
+p.centrar {
+    text-align: center;
+}

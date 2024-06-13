@@ -9,3 +9,5 @@ intellicode
 liveserver
 path intellisense
 live server preview
+IntelliSense for CSS class names in HTML
+CSS Peek

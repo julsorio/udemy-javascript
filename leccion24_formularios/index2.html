@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<body>
+    <h1>Formularios en html</h1>
+    <form id="uno" method="post" action="mi_server" target="_blank" autocomplete="off"> 
+        <!-- get metodo por defecto -->
+        <!-- los datos del formulario aparecen en la url-->
+        <!-- atributo autocomplete=off no permite que los campos se autocompleten-->
+        <!-- atributo target por defecto es self, con blank se abre una nueva pestaña para mostrar el resultado-->
+        <label for="nombre">Nombre:</label><br/>
+        <input type="text" id="nombre" name="nombre" placeholder="escribe tu nombre" required="true" /><br/>
+        
+        <label for="apellido">Apellido:</label><br/>
+        <input type="text" id="apellido" name="apellido" placeholder="escribe tu apellido" required="true" /><br/>
+        
+        <input type="submit" value="Enviar" />
+        <input type="submit" formnovalidate="formnovalidate" value="Enviar sin validar" />
+        <input type="reset" value="Restablecer" />
+    </form>
+    <br/>
+    <form id="dos" method="post">
+        <label for="password">Password:</label><br/>
+        <input type="password" id="password" name="password" placeholder="escribe tu password" required="true" /><br/>
+        
+        <input type="submit" value="Enviar" />
+        
+    </form>
+</body>
+</html>
