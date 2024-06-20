@@ -1,0 +1,39 @@
+h1 {
+    text-align: center;
+    color: crimson;
+}
+
+.contenedor {
+    position: relative;
+    border: 3px dashed greenyellow;
+    width: 30%;
+    margin: auto;
+}
+
+.contenedor2 {
+    border: 3px dashed greenyellow;
+    width: 30%;
+    margin: auto;
+    height: 100px;
+    /*overflow: visible;*/ /* por defecto*/
+    /*overflow: hidden;*/
+    /*overflow: scroll;*/
+    overflow: auto;
+    /*overflow-x: auto;*/ /* eje x*/
+    /*overflow-y: auto; */
+}
+
+
+
+.imagen {
+    width: 100%;
+    opacity: 0.2;
+}
+
+.centro {
+    position: absolute;
+    top:50%;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}

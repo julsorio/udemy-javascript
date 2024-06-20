@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>posicionamiento de elementos con css</title>
+    <link href="estilos18.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>centrar elementos div</h1>
+    <div>elemento div</div>
+
+    <!--
+        posicionamiento static, relative, fixed, absolute, sticky
+    -->
+    
+    <!-- static : los elementos div sin posicionamiento son static -->
+    <div class="estatico">elemento div con posicion static</div>
+
+    <!-- relativo: top bottom left right-->
+    <div class="relativo">elemento div con posicion relative</div>
+
+    <p>parrafo 1</p>
+    <p>parrafo 2</p>
+
+    <!-- fixed: relativa al viewport -->
+    <div class="ajustado">elemento div con posicion fixed</div>
+
+    <!-- absolute: se utiliza dentro de otro div, de lo contrario el body-->
+    <div class="padre">
+        div padre
+        <div class="absoluto">elemento div con posicion absolute</div>
+    </div>
+
+    <div class="pegajoso">
+        elemento div con posicion sticky
+    </div>
+
+    <div class="estatico2">
+        elemento no posicionado (static)
+    </div>
+
+    <div class="relativo2">
+        otro elemento div relativo
+        <div class="absoluto2">
+            otro elemento absoluto
+        </div>
+    </div>
+</body>
+</html>  
