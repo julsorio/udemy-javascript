@@ -1,0 +1,105 @@
+/* html y body para el gradiente */
+
+html {
+    height: auto;
+    min-height: 100%;
+}
+
+body {
+    /*background: linear-gradient(#f72585, #3a0ca3);*/
+    /*background: linear-gradient(to right, #f72585, #3a0ca3);*/
+    /*background: linear-gradient(#24404d, #6dbff1, #000000);*/
+    /*background: linear-gradient(to bottom right, #f72585, #3a0ca3);*/
+    /*background: linear-gradient(270deg, #f72585, #3a0ca3);*/
+    background: radial-gradient(circle, #0d47a1, #42a5f5);
+}
+
+
+h1 {
+    text-align: center;
+    color: #e63946;
+}
+
+.contenedor {
+    width: 30%;
+    height: 20%;
+    margin: auto;
+    border: 3px solid #a8dadc;
+    padding: 15px;
+    color: #457b9d;
+    text-align: center;
+}
+
+.contenedor:hover {
+    background-color: #457b9d;
+    color: #f1faee;
+}
+
+.contenedor.oculto p{
+    display: none;
+}
+
+.contenedor.oculto:hover p {
+    display: block;
+    background-color: #a8dadc;
+    color: #023e8a;
+    padding: 15px;
+}
+
+.contenedor.primero p:first-child {
+    font-variant: small-caps;
+}
+
+/* pseudoelementos */
+
+.contenedor2 p::selection {
+    color: red;
+    background-color: yellow;
+}
+
+.contenedor2 p::first-line {
+    font-variant: small-caps;
+}
+
+.contenedor2 p::first-letter {
+    color: red;
+    font-size: 1.5em;
+}
+
+.contenedor2 p::before {
+    content: "- "; /*se muestra antes del parrafo*/
+}
+
+.contenedor2 p::after {
+    content: " -"; /*se muestra despues del parrafo*/
+    /*content: url(); ruta de una imagen*/
+}
+
+/* p::selection -> aplicaria para todos los parrafos*/
+
+.contenedor3 {
+    width: 30%;
+    height: 20%;
+    margin: auto;
+    border: 3px solid #a8dadc;
+    padding: 15px;
+    color: #457b9d;
+    text-align: center;   
+}
+
+img {
+    opacity: 0.5; /* 1.0 es el valor por defecto*/
+}
+
+img:hover {
+    opacity: 1.0;
+}
+
+.contenedor4 {
+    width: 30%;
+    height: 20%;
+    margin: auto;
+    border: 3px solid #a8dadc;
+    padding: 15px;
+    text-align: center;
+}

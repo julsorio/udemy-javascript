@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores combinados CSS</title>
+    <link href="estilos21.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Selectores combinados CSS</h1>
+
+    <div class="contenedor descendiente">
+        <!-- selector descendiente -->
+         selectores descendientes (en cualquier nivel interno)
+         <p>primer parrafo</p>
+         <p>segundo parrafo</p>
+         <section>
+             <p>tercer parrafo</p>
+         </section>
+    </div>
+    
+    <div class="contenedor hijo">
+        <!-- selector child -->
+         selectores child (hijo directo)
+         <p>primer parrafo</p>
+         <p>segundo parrafo</p>
+         <section>
+             <p>tercer parrafo</p>
+         </section>
+    </div>
+    
+    <div class="contenedor adyacente">
+        <!-- selector sibling -->
+         selectores sibling (adyacente)
+         <p>primer parrafo</p>
+    </div>
+        
+    <p>segundo parrafo</p>
+    <p>otro parrafo</p>
+
+    <div class="contenedor hermano">
+        <!-- selector hermano -->
+         selectores sibling (adyacente)
+         <p>primer parrafo</p>
+    </div>
+        
+    <p>segundo parrafo</p>
+    <p>otro parrafo</p>
+
+
+</body>
+</html>
