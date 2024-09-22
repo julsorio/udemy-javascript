@@ -1,0 +1,7 @@
+para produccion, la aplicacion se debe compilar con el siguiente comando
+ng build --prod --aot
+
+se va a generar el directorio dist con los componentes necesarios
+
+si la aplicacion no se va a desplegar a nivel raiz, se debe pasar el siguiente parametro al compilar
+ng build --prod --aot --base-href /listado-personas/

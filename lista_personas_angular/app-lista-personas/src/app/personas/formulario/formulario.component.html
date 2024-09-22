@@ -1,0 +1,50 @@
+<div class="box">
+  <form class="item" #f="ngForm" (submit)="f.form.valid && onGuardarPersona()"> <!-- class="form-row" -->
+    <!--<div class="form-group col-md-2">
+      <label for="nombre" class="sr-only">Nombre</label> -->
+      <input name="nombre" id="nombre" type="text" placeholder="nombre" [(ngModel)] = "nombreInput" required  /> <!-- two way binding-->
+    <!--</div> -->
+    
+    <!-- <div class="form-group col-md-2">
+      <label for="apellido" class="sr-only">Apellido</label> -->
+      <input name="apellido" id="apellido" type="text" placeholder="apellido" [(ngModel)] = "apellidoInput" required  /> <!-- two way binding-->
+    <!--</div> -->
+    
+   
+    
+    <!--<div class="col"> -->
+      <!--<button type="submit"  (click)="agregarPersona()" > --> <!-- agregar con two way binding-->
+      <button type="submit" style="cursor: pointer;" >
+        twb
+      </button>
+      <button type="submit" style="cursor: pointer;" *ngIf="indice != null" class="buttonRed" (click)="eliminarPesona()" >
+        -
+      </button>
+    <!--</div>-->
+    
+  </form>
+
+  <form class="item">
+     <!--<div class="form-group col-md-2">
+      <label for="edad" class="sr-only">Edad</label> -->
+      <input name="edad" id="edad" type="number" placeholder="edad" #edadInput  /> <!-- referencia local -->
+    <!--</div>-->
+    
+    <!--<div class="form-group col-md-2">
+      <label for="email" class="sr-only">Email</label> -->
+      <input name="email" id="email" type="text"  placeholder="email" #emailInput  /> <!-- referencia local -->
+    <!--</div> -->
+    
+    <!-- <div class="form-group col-md-2">
+      <label for="telefono" class="sr-only">Telefono</label> -->
+      <input name="telefono" id="telefono" type="text" placeholder="telefono" #telefonoInput  /> <!-- view child -->
+    <!--</div> -->
+  
+    <!--<div class="col"> -->
+      <button type="submit"  (click)="agregarPersona2(edadInput, emailInput)" > <!-- agregar con referencia local -->
+        rl
+      </button>
+    <!-- </div>-->
+  </form>
+</div>
+
