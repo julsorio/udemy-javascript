@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Ejercicios</h1>
+            
+            <!-- property y event binding  -->
+            <!-- permite asignar valores a los elementos html -->
+            <button class="btn btn-primary" [disabled]="deshabilitarBoton" (click)="agregarPersona()" >
+                Agregar una persona
+            </button>
+            <p *ngIf="mostrarMensaje; else sinPersona">
+                {{ mensaje }} con el titulo {{ titulo }}
+            </p>
+            <ng-template #sinPersona>
+                <p>No se ha agregado ninguna persona</p>
+            </ng-template>
+
+            <label>Titulo persona</label>
+            <input type="text" class="form-control" (input)="modificarTitulo($event)" />
+            {{ titulo }}
+            
+            <!-- two way binding-->
+            <!-- se establece la comunicacion entre la plantilla y el componente-->
+            <!-- [] property binding-->
+            <!-- () event binding -->
+            <label>Texto libre</label>
+            <input type="text" class="form-control" [(ngModel)]="titulo2" />
+            {{ titulo2 }}
+
+            <app-persona></app-persona>
+
+        </div>
+    </div>
+</div>

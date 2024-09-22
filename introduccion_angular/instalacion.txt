@@ -1,0 +1,56 @@
+instalar angular cli
+npm install -g @angular/cli
+
+iniciar el servidor de angular
+ng serve -o
+
+creacion de una aplicacion angular
+ng new nombre-aplicacion
+
+
+*****************
+
+en el directorio app
+
+el fichero app.components.ts contiene los componentes
+en este caso esta definido app-root y hace referencia al html y css
+
+
+**************
+ejecutar un proyecto sin el directorio node_modules
+se abre un prompt y se ejecuta el comando npm install -> de esta forma se crea el directorio con los modulos que se han configurado
+
+
+***************
+
+crear componente desde cli
+en el prompt se ejecuta ng generate component persona
+también se puede resumir: ng g c persona
+
+*************
+tambien se puede crear un componente de forma manual
+
+se ha creado el fichero app.module.ts donde se realiza el import del componente 'PersonasComponent' y 
+mediante el decorador NgModule, se registra el componente
+
+******************
+al comando de creacion de componente se pueden agregar otras opciones
+ng g c persona -s (para creacion de css en linea) -t (plantilla html en linea)
+
+********************
+instalacion de bootstrap en angular
+npm install bootstrap --save (--save para que se almacene dentro de node_modules)
+
+el fichero angular.json se debe modificar
+"styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+
+*****************************
+
+comando para creacion de modulos
+ng c module nombre-modulo

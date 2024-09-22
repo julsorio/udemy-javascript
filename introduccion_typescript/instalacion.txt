@@ -1,0 +1,49 @@
+prompt con permisos de administrador
+npm install -g typescript
+
+se cambia la extension js del fichero funciones a ts
+
+se compila desde el prompt: tsc funciones.ts
+se ha creado el fichero funciones.js
+
+se ejecuta el comando tsc -init 
+se ha creado un fichero de configuracion de typescript
+
+se ejecuta el comando tsc -watch para observar los cambios que se realicen en los ficheros typescript y compilar automaticamente
+
+
+npm install webpack webpack-cli webpack-dev-server (para resolver imports)
+npm install typescript ts-loader --save-dev
+generar el fichero package.json mediante el comando npm init -y
+
+al fichero package.json se añade lo siguiente después de "description" para iniciar el servidor en modo de desarrollo
+
+"scripts" : {
+    "start" : "webpack serve --mode development"
+}
+
+luego se debe crear el fichero webpack.config.js
+
+const path = require('path');
+
+module.exports = {
+    entry: path.join(__dirname, '/modulos.ts'),
+    output: {
+        filename: 'modulos.js',
+        path: __dirname
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/,
+            },
+        ]
+    },
+    resolve: {
+        extensions: [".tsx", ".ts", ".js"]
+    },
+};
+
+y se inicia el servidor con el comando npm start

@@ -1,0 +1,21 @@
+<form class="form-row">
+    <div class="form-group col-md-2">
+      <label for="operandoA" class="sr-only">Operando A</label>
+      <!-- <input type="number" class="form-control" placeholder="Escribe un numero" (blur)="obtenerOperandoA($event)" /> -->
+      <input name="operandoA" type="number" class="form-control" placeholder="Escribe un numero" [(ngModel)]="operandoA" />
+    </div>
+    
+    <div class="form-group col-md-2">
+      <label for="operandoB" class="sr-only">Operando B</label>
+      <!-- <input type="number" class="form-control" placeholder="Escribe un numero" (blur)="obtenerOperandoA($event)" /> -->
+      <input name="operandoB" type="number" class="form-control" placeholder="Escribe un numero" [(ngModel)]="operandoB" />
+    </div>
+  
+    <div class="col">
+      <button type="submit" class="btn btn-primary" (click)="realizarSuma()" >
+        Sumar
+      </button>
+
+    </div>
+    
+  </form>

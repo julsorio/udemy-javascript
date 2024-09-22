@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+</div>
+
+<!-- event binding -->
+<app-formulario (resultadoOperacion)="testRecibeValor($event)"></app-formulario>
+
+<!-- se utiliza property binding -->
+<app-resultado [resultado] = "valorRecibido" ></app-resultado>
+
+<router-outlet />
