@@ -11,3 +11,10 @@ path intellisense
 live server preview
 IntelliSense for CSS class names in HTML
 CSS Peek
+
+extensiones para angular
+Angular Language Service
+Angular Files
+Angular Support
+Angular 2 TypeScript Emmet
+Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets
