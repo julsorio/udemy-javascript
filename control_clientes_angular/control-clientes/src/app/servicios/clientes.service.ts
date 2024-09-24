@@ -37,4 +37,22 @@ export class ClientesService {
     guardarCliente(cliente: Cliente): void {
         this.coleccionClientes.add(cliente);
     }
+
+    getClienteById(id: string): Observable<Cliente> {
+        this.clienteDoc = this.database.doc<Cliente>(`clientes/${id}`);
+        this.cliente = this.clienteDoc.snapshotChanges().pipe(
+            map(accion => {
+                if(accion.payload.exists === false) {
+                    return null as any;
+                } else {
+                    const datosCliente = accion.payload.data() as Cliente;
+                    datosCliente.id = accion.payload.id;
+
+                    return datosCliente;
+                }
+            })
+        );
+
+        return this.cliente;
+    }
 }

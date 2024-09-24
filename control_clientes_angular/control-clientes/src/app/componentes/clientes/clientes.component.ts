@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ClientesService } from '../../servicios/clientes.service';
 import { Cliente } from '../../modelo/cliente.model';
 import { CommonModule } from '@angular/common';
@@ -28,10 +28,12 @@ export class ClientesComponent implements OnInit {
     saldo: 0,
     id: ''
   }
-  
-  //@ViewChild("clienteForm") clienteForm: NgForm;
+    
+  //@ViewChild("clienteForm") clienteForm1: NgForm;
   //clienteForm: FormGroup;
   clienteForm: FormGroup;
+
+  @ViewChild("botonCerrar") botonCerrar: ElementRef;
   
   constructor(private formBuilder: FormBuilder, private clienteService: ClientesService) {
     this.clienteForm = this.formBuilder.group({
@@ -87,15 +89,21 @@ export class ClientesComponent implements OnInit {
     if(!valid) {
       console.log("no se ha rellenado el formulario");
     } else {
+      }
       //se guarda el cliente
       this.clienteService.guardarCliente(value);
-    }
-   }*/
+      }*/
+     
+     onSubmit() {
+       //se guarda el cliente
+      this.clienteService.guardarCliente(this.clienteForm.value);
+      //limpiar los campos del formulario despues del submit
+      this.clienteForm.reset();
+      //se cierra el dialogo modal
+      this.cerrarDialogoModal();
+   }
 
-   onSubmit() {
-    console.log("on submit");
-
-    
-
+   private cerrarDialogoModal() {
+    this.botonCerrar.nativeElement.click();
    }
 }

@@ -1,1 +1,73 @@
-<p>editar-cliente works!</p>
+<header id="main-header" class="py-2 bg-info text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>
+                    <i class="fas fa-user"></i> Editar Cliente
+                </h1>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<form [formGroup]="clienteForm" (ngSubmit)="onSubmit()" > 
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" class="form-control" formControlName="nombre"  />
+
+        <div *ngIf="clienteForm.get('nombre')?.invalid && clienteForm.get('nombre')?.touched">
+            <div *ngIf="clienteForm.get('nombre')?.hasError('required')" >
+                Nombre requerido
+            </div>
+            <div *ngIf="clienteForm.get('nombre')?.hasError('minlength')" >
+                Debe contener al menos 2 caracteres
+            </div>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" class="form-control" formControlName="apellido"  />
+
+        <div *ngIf="clienteForm.get('apellido')?.invalid && clienteForm.get('apellido')?.touched">
+            <div *ngIf="clienteForm.get('apellido')?.hasError('required')" >
+                Apellido requerido
+            </div>
+            <div *ngIf="clienteForm.get('apellido')?.hasError('minlength')" >
+                Debe contener al menos 2 caracteres
+            </div>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control" formControlName="email"  />
+
+        <div *ngIf="clienteForm.get('email')?.invalid && clienteForm.get('email')?.touched">
+            <div *ngIf="clienteForm.get('email')?.hasError('required')" >
+                Email requerido
+            </div>
+            <div *ngIf="clienteForm.get('email')?.invalid" >
+                Email invalido
+            </div>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="saldo">Saldo</label>
+        <input type="number" name="saldo" class="form-control" formControlName="saldo"  />
+
+        <div *ngIf="clienteForm.get('saldo')?.invalid && clienteForm.get('saldo')?.touched">
+            <div *ngIf="clienteForm.get('saldo')?.hasError('required')" >
+                Saldo requerido
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" >Guardar</button>
+    </div>
+</form>
