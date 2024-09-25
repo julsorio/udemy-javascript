@@ -11,63 +11,108 @@
 
 </header>
 
-<form [formGroup]="clienteForm" (ngSubmit)="onSubmit()" > 
-    <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" class="form-control" formControlName="nombre"  />
+<!-- template form -->
+<form #clienteForm="ngForm" (ngSubmit)="onSubmit(clienteForm)" > 
 
-        <div *ngIf="clienteForm.get('nombre')?.invalid && clienteForm.get('nombre')?.touched">
-            <div *ngIf="clienteForm.get('nombre')?.hasError('required')" >
-                Nombre requerido
-            </div>
-            <div *ngIf="clienteForm.get('nombre')?.hasError('minlength')" >
-                Debe contener al menos 2 caracteres
-            </div>
-        </div>
+    <!-- botones-->
 
-    </div>
-    <div class="form-group">
-        <label for="apellido">Apellido</label>
-        <input type="text" name="apellido" class="form-control" formControlName="apellido"  />
-
-        <div *ngIf="clienteForm.get('apellido')?.invalid && clienteForm.get('apellido')?.touched">
-            <div *ngIf="clienteForm.get('apellido')?.hasError('required')" >
-                Apellido requerido
-            </div>
-            <div *ngIf="clienteForm.get('apellido')?.hasError('minlength')" >
-                Debe contener al menos 2 caracteres
+    <section id="actions" class="py-4 mb-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <a routerLink="/" class="btn btn-light btn-block">
+                        <i class="fas fa-arrow-left"></i> Regresar a inicio
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success btn-block" [disabled]="!clienteForm.form.valid">
+                        <i class="fas fa-check"></i> Guardar cliente
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" (click)="eliminarCliente()" class="btn btn-danger btn-block" >
+                        <i class="fas fa-trash"></i> Eliminar cliente
+                    </a>
+                </div>
             </div>
         </div>
+    </section>
 
-    </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" name="email" class="form-control" formControlName="email"  />
+    <section id="details">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Editar cliente</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="nombre" #nombre="ngModel" class="form-control" [(ngModel)]="cliente.nombre" 
+                                    required minlength="2"
+                                    [ngClass]="{'is-invalid': nombre.errors && nombre.touched}" />
+                            </div>
+                            <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" >
+                                <div *ngIf="nombre.errors?.['required']">
+                                    Nombre requerido
+                                </div>
+                                <div *ngIf="nombre.errors?.['minlength']">
+                                    Debe contener al menos 2 caracteres
+                                </div>
+                            </div> 
+                              
+                            <div class="form-group">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" name="apellido" #apellido="ngModel" class="form-control" [(ngModel)]="cliente.apellido" 
+                                required minlength="2"
+                                [ngClass]="{'is-invalid': apellido.errors && apellido.touched}"  />
+                            </div>
+                            <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)" >
+                                <div *ngIf="apellido.errors?.['required']">
+                                    Apellido requerido
+                                </div>
+                                <div *ngIf="apellido.errors?.['minlength']">
+                                    Debe contener al menos 2 caracteres
+                                </div>
+                            </div> 
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" #email="ngModel" class="form-control" [(ngModel)]="cliente.email" 
+                                required
+                                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                                [ngClass]="{'is-invalid': email.errors && email.touched}" />
+                            </div>
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)" >
+                                <div *ngIf="email.errors?.['required']">
+                                    Email requerido
+                                </div>
+                                <div *ngIf="email.errors?.['pattern']">
+                                    Email no es valido
+                                </div>
+                            </div> 
 
-        <div *ngIf="clienteForm.get('email')?.invalid && clienteForm.get('email')?.touched">
-            <div *ngIf="clienteForm.get('email')?.hasError('required')" >
-                Email requerido
-            </div>
-            <div *ngIf="clienteForm.get('email')?.invalid" >
-                Email invalido
+                            <div class="form-group">
+                                <label for="saldo">Saldo</label>
+                                <input type="number" name="saldo" #saldo="ngModel" class="form-control" [(ngModel)]="cliente.saldo" 
+                                required
+                                [ngClass]="{'is-invalid': saldo.errors && saldo.touched}" />
+                            </div>
+                            <div *ngIf="saldo.invalid && (saldo.dirty || saldo.touched)" >
+                                <div *ngIf="apellido.errors?.['required']">
+                                    Saldo requerido
+                                </div>
+                            </div> 
+
+                            <div class="form-group">
+                                <input type="hidden" name="id" [(ngModel)]="cliente.id" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-    </div>
-    <div class="form-group">
-        <label for="saldo">Saldo</label>
-        <input type="number" name="saldo" class="form-control" formControlName="saldo"  />
-
-        <div *ngIf="clienteForm.get('saldo')?.invalid && clienteForm.get('saldo')?.touched">
-            <div *ngIf="clienteForm.get('saldo')?.hasError('required')" >
-                Saldo requerido
-            </div>
-            
-        </div>
-
-    </div>
-
-    <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" >Guardar</button>
-    </div>
 </form>

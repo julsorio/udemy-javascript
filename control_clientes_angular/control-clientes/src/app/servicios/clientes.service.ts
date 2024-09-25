@@ -55,4 +55,14 @@ export class ClientesService {
 
         return this.cliente;
     }
+
+    modificarCliente(cliente: Cliente): void {
+        this.clienteDoc = this.database.doc<Cliente>(`clientes/${cliente.id}`);
+        this.clienteDoc.update(cliente);
+    }
+
+    eliminarCliente(cliente: Cliente): void {
+        this.clienteDoc = this.database.doc<Cliente>(`clientes/${cliente.id}`);
+        this.clienteDoc.delete();
+    }
 }
