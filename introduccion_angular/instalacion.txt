@@ -54,3 +54,16 @@ el fichero angular.json se debe modificar
 
 comando para creacion de modulos
 ng c module nombre-modulo
+
+
+
+
+https://www.telerik.com/blogs/angular-basics-how-get-form-values
+
+https://www.youtube.com/watch?v=bglyyfOYkOM
+
+https://www.youtube.com/watch?v=j9ciFdvystE - rest api
+
+https://www.javaguides.net/2024/05/spring-boot-3-and-angular-18-crud-example.html
+
+https://medium.com/javajams/creating-a-rest-api-in-spring-boot-68ce785f652f
